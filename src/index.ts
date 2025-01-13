@@ -24,10 +24,6 @@ const app = new Elysia()
       logger.info(`Request: ${context.request.method} ${context.request.url}`);
     });
     return app;
-  })
-  .listen({
-    port: port,
-    hostname: host,
   });
 
 // Initialize dependencies
@@ -38,6 +34,11 @@ const seoController = new SEOController(seoService);
 // Register routes
 seoController.registerRoutes(app);
 
+// Start the server
+app.listen({
+  port: port,
+  hostname: host,
+});
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`

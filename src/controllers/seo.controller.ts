@@ -6,8 +6,8 @@ export class SEOController {
 
   registerRoutes(app: Elysia) {
     return app
-      .get('/health', () => ({
-        status: 'ok',
+      .get('/', () => ({
+        status: 'Server is running...',
         timestamp: new Date().toISOString()
       }))
       .get('/api/seo/:brandingName', async ({ params }) => {
