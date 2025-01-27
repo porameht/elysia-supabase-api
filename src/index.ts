@@ -26,15 +26,12 @@ const app = new Elysia()
     return app;
   });
 
-// Initialize dependencies
 const seoRepository = new SEORepository(supabase);
 const seoService = new SEOService(seoRepository);
 const seoController = new SEOController(seoService);
 
-// Register routes
 seoController.registerRoutes(app);
 
-// Start the server
 app.listen({
   port: port,
   hostname: host,

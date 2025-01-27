@@ -1,0 +1,11 @@
+### Health check
+GET http://localhost:3000/
+
+### Get SEO entries by branding name
+GET http://localhost:80/api/seo/another-brand
+
+### Get SEO entries for another brand
+GET http://localhost:80/api/seo/another-brand
+
+### Get SEO entry by id
+GET http://localhost:80/api/seo/another-brand/1
